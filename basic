@@ -1,0 +1,51 @@
+# Program-Assignment-1- 
+
+package programming.pkg1;
+import java.util.Scanner;
+public class Shapes  {
+    double length;
+    double width;
+    double radius;
+  
+    Shapes (double x, double y ){
+        length= x;
+        width=y; 
+        
+    }
+   
+    public void getArea(){
+    double area = length*width;
+    System.out.println(area);
+    }
+    
+    
+    public void getvolume()
+   
+    public static void main(String[] args) {
+        // TODO code application logic here
+       Scanner input1 = new Scanner (System.in);
+       System.out.println("what is the length");
+       double x = input1.nextDouble ();
+       
+       Scanner input2 = new Scanner (System.in);
+       System.out.println("what is the width");
+       double y = input2.nextDouble ();
+       
+       Shapes rectangle = new Shapes(x,y);
+       rectangle.getArea();
+      
+       
+       
+     
+      
+       
+       
+       
+
+    }
+
+   
+    
+}
+
+
