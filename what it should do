@@ -1,0 +1,58 @@
+
+import java.util.Scanner;
+public class P  {
+    double length;
+    double width;
+    double radius;
+  
+   P (double x, double y ){
+        length= x;
+        width=y; 
+        
+    }
+   
+    public double getArea(){
+    return length*width; 
+    }
+    
+    public double getArea2(){
+        return (length*width/2);
+    } 
+   
+    
+    public double getperim(){
+    return (length+width)*2; 
+    
+    }
+    
+    
+   
+    public static void main(String[] args) {
+        // TODO code application logic here
+       Scanner input1 = new Scanner (System.in);
+       System.out.println("what is the length");
+       double x = input1.nextDouble ();
+       
+       Scanner input2 = new Scanner (System.in);
+       System.out.println("what is the width");
+       double y = input2.nextDouble ();
+       
+       P rectangle = new P (x,y);
+       P triangle = new P (x,y);
+       System.out.println(rectangle.getArea());
+       System.out.println(triangle.getArea2());
+       
+      
+       
+       
+     
+      
+       
+       
+ 
+    }
+
+   
+    
+}
+
