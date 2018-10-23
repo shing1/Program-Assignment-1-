@@ -1,0 +1,113 @@
+
+
+
+package programming.pkg1;
+import java.util.Scanner;
+
+class Rectangle extends Shapes {
+
+    public Rectangle(double x, double y) {
+        super(x, y);
+    }
+     public void getArea(){   //overloading 
+    double area = length*width;
+    System.out.println("Area is :" + area);
+    }
+    
+   public void getperim(){   
+    double perim = (2*length)+(2*width);
+    System.out.println("perimrter is " + perim);
+    }
+     
+  
+}
+
+
+class Triangle extends Shapes {
+    public Triangle(double x, double y) {
+        super(x, y);
+    }
+    public void getArea(){   //overloading 
+    double area= (length*width)/2;
+    System.out.println("Area is:" + area);
+    }
+    
+    public void getperim(){   
+    double perim = (3*width);
+    System.out.println("perimrter is " + perim);
+    }
+     
+    
+    
+}
+
+
+
+   
+
+
+
+  
+   public class Shapes  {
+    double length;
+    double width;
+    double radius;
+  
+    Shapes (double x, double y ){
+        length= x;
+        width=y; 
+        
+    }
+    
+  
+    
+    
+    public static void main(String[] args) {
+        
+        
+         Scanner input0 = new Scanner (System.in);
+       System.out.println("pick a shape: 1) rectangle 2) Triangle ");
+       double choice = input0.nextDouble ();
+       
+       
+       if (choice == 1){
+          
+           
+        Scanner input1 = new Scanner (System.in);
+       System.out.println("what is the length");
+       double x = input1.nextDouble ();
+       
+       Scanner input2 = new Scanner (System.in);
+       System.out.println("what is the width");
+       double y = input2.nextDouble ();
+           
+        Rectangle rectangle = new Rectangle (x,y);
+       rectangle.getArea();
+       rectangle.getperim();
+                 
+    
+       }
+       else {
+           
+           Scanner input1 = new Scanner (System.in);
+       System.out.println("what is the width");
+       double x = input1.nextDouble ();
+       
+       Scanner input2 = new Scanner (System.in);
+       System.out.println("what is the height");
+       double y = input2.nextDouble ();
+       Triangle triangle = new Triangle (x,y);
+     triangle.getArea(); 
+           
+       }
+        
+      
+       
+
+     
+      
+       
+    
+    }
+   } 
+   
