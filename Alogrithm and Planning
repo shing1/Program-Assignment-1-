@@ -1,0 +1,37 @@
+
+steps 
+
+For finding rectangle, ask user for the length and width
+Assign the inputs to the width and length 
+perimeter = 2(w+l)
+Area = w*l
+out put area and perimeter 
+For finding circle, ask user for the radius 
+Assign the values to the radius 
+circumference = 2pi*r 
+Area = 2pi rsqaure 
+Output the circumference and area 
+ 
+
+Methods 
+get area ()
+Get perimeter ()
+
+Constructor x, y 
+objects : Rectangle, triangle 
+
+Class Shapes ()  // superclass {
+
+length;
+width;
+Radius;
+Shapes rectangle = new Shapes(); 
+Shapes circle = new Shapes ();
+
+
+public static void main(String[] args) {
+ 
+Scanner x = new Scanner (System.in);
+System.out.println(“what is the radius”);
+
+ }
