@@ -1,9 +1,11 @@
+
 //Sarah Hing 
 //Program Assignment #1 09/25/2018 
 // Chooses shape, outputs area and perimeter 
 
 package programming.pkg1;
 import java.util.Scanner;
+
 
 class Rectangle extends Shapes {    //subclass 
     public Rectangle(double x, double y) {
@@ -24,7 +26,7 @@ class Triangle extends Shapes {  //subclass
     public double getArea(){   //overriding 
         return(length*width)/2;   
     }
-    public double getPerim(){   
+    public double getPerim(){   //overriding 
         return (3*width);
     }
 }
@@ -35,11 +37,11 @@ class Circle extends Shapes {  //subclass
     }
 
     public double getArea (){
-        return Math.PI* Math.pow (radius,2);
+        return Math.round( Math.PI* Math.pow (radius,2));
     }
         
     public double getPerim (){
-       return 4* Math.PI * Math.pow(radius, 2);
+       return Math.round (2* Math.PI *radius);
 }   
 
 }
@@ -59,8 +61,8 @@ class Circle extends Shapes {  //subclass
     
   
     // main drive 
-    public static void main(String[] args) {
-       String [] arr = new String [] {"Enter a length:", "Enter a width:","Enter a radius" , " 1) Rectangle 2) Circle 3) Triangle", "Area:", "Perimeter:"}; 
+       public static void main(String[] args) {
+       String [] arr = new String [] {"Enter a length:", "Enter a width:","Enter a radius" , " 1) Rectangle 2) Circle 3) Equalateral Triangle", "Area:", "Perimeter:"}; 
        Scanner input0 = new Scanner (System.in);
        System.out.println("Pick a shape:"+ arr[3]);
        double choice = input0.nextDouble ();
@@ -76,8 +78,8 @@ class Circle extends Shapes {  //subclass
        double y = input2.nextDouble ();
            
        Rectangle rectangle = new Rectangle (x,y);
-       System.out.println(arr[4]+rectangle.getArea());  // Arae:
-       System.out.println (arr[5] +rectangle.getPerim());//Perimeter:
+       System.out.println(arr[4]+rectangle.getArea()); 
+       System.out.println (arr[5] +rectangle.getPerim());
     
        }
        
@@ -87,10 +89,10 @@ class Circle extends Shapes {  //subclass
        System.out.println(arr[2]); //Enter a radius 
        double r = inputr.nextDouble ();
        Circle circle = new Circle (r);
-       System.out.println (arr[4]+circle.getArea()); //area: 
-       System.out.println(arr[5]+ circle.getPerim()); //Perimeter:
+       System.out.println (arr[4]+circle.getArea()); 
+       System.out.println(arr[5]+ circle.getPerim()); 
        
-       //need to do rounding 
+       
        }
        //triangle 
        else {    
@@ -102,11 +104,11 @@ class Circle extends Shapes {  //subclass
        System.out.println(arr[1]);//Enter a width: 
        double y = input2.nextDouble ();
        Triangle triangle = new Triangle (x,y);
-       System.out.println(arr[4]+ triangle.getArea());//Area
-       System.out.println(arr[5]+ triangle.getArea());//Perimeter 
+       System.out.println(arr[4]+ triangle.getArea());
+       System.out.println(arr[5]+ triangle.getPerim());
        
        }
        
     
     }
-   } 
+   }
