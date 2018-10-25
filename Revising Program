@@ -1,0 +1,112 @@
+//Sarah Hing 
+//Program Assignment #1 09/25/2018 
+// Chooses shape, outputs area and perimeter 
+
+package programming.pkg1;
+import java.util.Scanner;
+
+class Rectangle extends Shapes {    //subclass 
+    public Rectangle(double x, double y) {
+        super(x, y);
+    }
+    public double getArea(){   
+        return length*width;
+    }
+    
+    public double getPerim(){   
+       return(2*length)+(2*width);
+    } 
+}
+class Triangle extends Shapes {  //subclass 
+    public Triangle(double x, double y) {
+        super(x, y);
+    }
+    public double getArea(){   //overriding 
+        return(length*width)/2;   
+    }
+    public double getPerim(){   
+        return (3*width);
+    }
+}
+
+class Circle extends Shapes {  //subclass 
+    public Circle(double r) {
+        super(r);
+    }
+
+    public double getArea (){
+        return Math.PI* Math.pow (radius,2);
+    }
+        
+    public double getPerim (){
+       return 4* Math.PI * Math.pow(radius, 2);
+}   
+
+}
+   public class Shapes  {  // attributes 
+    double length;
+    double width;
+    double radius;
+  
+    Shapes (double x, double y){  //triangle + rectangle constructor 
+        length= x;
+        width=y;   
+    }  
+    
+    Shapes (double r) { //circle constructor 
+      radius = r; 
+   } 
+    
+  
+    // main drive 
+    public static void main(String[] args) {
+       String [] arr = new String [] {"Enter a length:", "Enter a width:","Enter a radius" , " 1) Rectangle 2) Circle 3) Triangle", "Area:", "Perimeter:"}; 
+       Scanner input0 = new Scanner (System.in);
+       System.out.println("Pick a shape:"+ arr[3]);
+       double choice = input0.nextDouble ();
+       
+       //Rectangle 
+       if (choice == 1){
+       Scanner input1 = new Scanner (System.in);
+       System.out.println(arr[0]);  //Enter a length 
+       double x = input1.nextDouble ();
+       
+       Scanner input2 = new Scanner (System.in);
+       System.out.println(arr[1]);  //Enter a width
+       double y = input2.nextDouble ();
+           
+       Rectangle rectangle = new Rectangle (x,y);
+       System.out.println(arr[4]+rectangle.getArea());  // Arae:
+       System.out.println (arr[5] +rectangle.getPerim());//Perimeter:
+    
+       }
+       
+       //Circle 
+       else if (choice == 2){
+       Scanner inputr = new Scanner (System.in);
+       System.out.println(arr[2]); //Enter a radius 
+       double r = inputr.nextDouble ();
+       Circle circle = new Circle (r);
+       System.out.println (arr[4]+circle.getArea()); //area: 
+       System.out.println(arr[5]+ circle.getPerim()); //Perimeter:
+       
+       //need to do rounding 
+       }
+       //triangle 
+       else {    
+       Scanner input1 = new Scanner (System.in);
+       System.out.println(arr[0]); //Enter a length 
+       double x = input1.nextDouble ();
+       
+       Scanner input2 = new Scanner (System.in);
+       System.out.println(arr[1]);//Enter a width: 
+       double y = input2.nextDouble ();
+       Triangle triangle = new Triangle (x,y);
+       System.out.println(arr[4]+ triangle.getArea());//Area
+       System.out.println(arr[5]+ triangle.getArea());//Perimeter 
+       
+       }
+       
+    
+    }
+   } 
