@@ -28,7 +28,7 @@ class Triangle extends Shapes {  //subclass
     }
     public double getPerim(){   //overriding 
         return (3*width);
-    }
+    } 
 }
 
 class Circle extends Shapes {  //subclass 
